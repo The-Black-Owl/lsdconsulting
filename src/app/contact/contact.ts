@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
 
 interface ContactInfo {
   type: string;
@@ -20,7 +20,7 @@ interface ContactFormData {
 @Component({
   selector: 'app-contact',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })

@@ -4,7 +4,7 @@
     <div class="contact-container">
       <div class="contact-form">
         <h3>Get Your Free Consultation</h3>
-        <form formGroup="contactForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           
           <div class="form-group">
             <label for="name">Full Name *</label>
