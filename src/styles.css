@@ -1,0 +1,142 @@
+/* // Global styles for the attorney website */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* // Common container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* // Section title styling */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    margin: 1rem auto;
+  }
+}
+
+/* // CTA Button styling */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  cursor: pointer;
+  border: none;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* // Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* // Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #FFD700;
+    font-weight: 500;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #444;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #FFD700;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    &.error {
+      border-color: #ff4444;
+    }
+
+    &::placeholder {
+      color: #888;
+    }
+  }
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  background: #2d5016;
+  color: #90ee90;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+/* // Mobile responsiveness */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}

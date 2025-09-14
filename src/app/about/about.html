@@ -1,0 +1,29 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Attorney {{ attorney.name }}</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <div class="attorney-photo" *ngIf="!attorney.photoUrl">
+          Professional Attorney Photo
+        </div>
+        <img 
+          *ngIf="attorney.photoUrl" 
+          [src]="attorney.photoUrl" 
+          [alt]="attorney.name"
+          class="attorney-photo"
+        />
+      </div>
+      <div class="about-text">
+        <h3>{{ attorney.title }}</h3>
+        <p *ngFor="let paragraph of attorney.description">
+          {{ paragraph }}
+        </p>
+        <ul class="credentials">
+          <li *ngFor="let credential of attorney.credentials">
+            {{ credential }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
